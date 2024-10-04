@@ -12,10 +12,10 @@ public class Level5 {
             case 7     -> "C"; 
             case 6     -> "D"; 
             default    -> {
-                String message = "E" + warning;
+                String message = "F" + warning;
                 yield message ;
             }
         };
-        System.out.printf("�o�����šG%s%n", level);
+        System.out.printf("得分等級：%s%n", level);
     }
 }

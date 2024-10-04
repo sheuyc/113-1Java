@@ -9,8 +9,8 @@ public class Level3 {
             case 8     -> 'B';
             case 7     -> 'C'; 
             case 6     -> 'D'; 
-            default    -> 'E';
+            default    -> 'F';
         };
-        System.out.printf("�o�����šG%c%n", level);
+        System.out.printf("得分等級：%c%n", level);
     }
 }

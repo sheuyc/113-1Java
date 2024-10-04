@@ -14,8 +14,8 @@ public class Level4 {
             case 6:
                 yield 'D'; 
             default:
-                yield 'E';
+                yield 'F';
         };
-        System.out.printf("�o�����šG%c%n", level);
+        System.out.printf("得分等級：%c%n", level);
     }
 }
