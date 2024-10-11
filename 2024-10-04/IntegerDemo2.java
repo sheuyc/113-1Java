@@ -1,6 +1,4 @@
-//package cc.openhome;
-
-public class IntegerDemo {
+public class IntegerDemo2 {
     public static void main(String[] args) {
         int data1 = 10;
         int data2 = 20;
