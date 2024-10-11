@@ -1,17 +1,14 @@
 public class IntegerDemo2 {
     public static void main(String[] args) {
-        int data1 = 10;
-        int data2 = 20;
+        int data1 = 100;
+        Integer wrapper1 = data1; //自動裝箱
+        Integer wrapper2 = 100;
+        int data2 = wrapper2; //自動拆箱
         
-        //var wrapper1 = Integer.valueOf(data1);
-        //var wrapper2 = Integer.valueOf(data2);
-        Integer wrapper1 = Integer.valueOf(data1);
-        Integer wrapper2 = Integer.valueOf(data2);
-
-        System.out.println(data1 / 3);
-        System.out.println(data1 / 3.0);
-        System.out.println((double)data1 / 3);
-        System.out.println(wrapper1.doubleValue() / 3);
-        System.out.println(wrapper1.compareTo(wrapper2));
+        if (wrapper1 == wrapper2) {
+            System.err.println("wrapper1 == wrapper2");
+        } else {
+            System.err.println("wrapper1 != wrapper2");
+        }
     }
 }

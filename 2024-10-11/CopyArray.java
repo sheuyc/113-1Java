@@ -1,4 +1,4 @@
-package cc.openhome;
+//package cc.openhome;
 
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ public class CopyArray {
         System.out.println();
 
         scores2[0] = 99;
-        // ¤£¼vÅTscore1°Ñ¦Òªº°}¦Cª«¥ó
+        // ï¿½ï¿½ï¿½vï¿½Tscore1ï¿½Ñ¦Òªï¿½ï¿½}ï¿½Cï¿½ï¿½ï¿½ï¿½
         for(var score : scores1) {
             System.out.printf("%3d", score);
         }
