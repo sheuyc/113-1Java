@@ -1,13 +1,38 @@
 class CashCard {
-    String number;
-    int balance;
-    int bonus;
+    private String number;
+    private int balance;
+    private int bonus;
 
     CashCard(String number, int balance, int bonus) {
         this.number = number;
         this.balance = balance;
         this.bonus = bonus;
     }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public int getBonus() {
+        return bonus;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public void setBonus(int bonus) {
+        this.bonus = bonus;
+    }
+
     //儲值
     void store(int money) {
         if (money > 0) {
