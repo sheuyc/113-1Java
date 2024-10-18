@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import edu.shu.ching.*;
 
 public class CardApp {
     public static void main(String[] args) {
