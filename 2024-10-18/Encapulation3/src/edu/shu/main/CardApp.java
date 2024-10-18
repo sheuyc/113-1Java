@@ -1,3 +1,4 @@
+package edu.shu.main;
 import java.util.Scanner;
 import edu.shu.ching.*;
 
