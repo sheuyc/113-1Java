@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Time1Test {
     public static void  main(String[] args){
         //設定起始時間
-        Time1 time = new Time1(12, 54, 4);
+        Time1 time = new Time1(14, 54, 4);
         //呼叫print Universal()
         System.out.println("24小時制：" + time.printUniversal());
         //呼叫print Standard()
