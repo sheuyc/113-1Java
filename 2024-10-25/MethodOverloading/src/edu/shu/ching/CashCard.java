@@ -4,6 +4,8 @@ public class CashCard {
     private String number;
     private int balance;
     private int bonus;
+    private  final int BOUNSCASH = 10;
+    //方法的身分辨識 = 方法名稱 + 參數個數 + 參數型態
     //private String number = "A000";
 
     public CashCard() {
@@ -83,7 +85,7 @@ public class CashCard {
             System.out.println("卡號不符");
         }
     }
-    //方法
+    //方法儲值
     private void topUp (int money) {
         if (money > 0) {
             this.balance += money;
@@ -96,7 +98,26 @@ public class CashCard {
         }
     }
     //扣款
-    public void charge(int money){
+    public void charge(String number, int money){
+        if(this.number.equals(number)){
+            deduction(money);
+        }
+        else {
+            System.out.println("卡號不符");
+        }
+    }
+    //
+    public void charge(String number, int money, int bonus){
+        if(this.number.equals(number)){
+            
+            deduction(money);
+        }
+        else {
+            System.out.println("卡號不符");
+        }
+    }
+    //方法扣款
+    private void deduction(int money){
         if (money > 0){
             if (money <= this.balance){
                 this.balance -= money;
@@ -111,8 +132,12 @@ public class CashCard {
     }
     //紅利
     public int exchange(int bonus) {
-        if (bonus > 0) {
+        if (bonus > 0 && this.bonus >= bonus) {
             this.bonus -= bonus;
+            setBalance(this.balance + bonus * BOUNSCASH);
+        }
+        else {
+            System.out.println("點數不足");
         }
         return this.bonus;
     }
