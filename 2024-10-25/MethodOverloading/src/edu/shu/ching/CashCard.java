@@ -73,6 +73,22 @@ public class CashCard {
             System.out.println("儲值金額為負，來亂的！");
         }
     }
+    //辨識卡號
+    public  void store(String number, int money) {
+        if (this.number.equals(number)) {
+            if (money > 0) {
+                this.balance += money;
+                if (money >= 1000) {
+                    this.balance += money / 1000;
+                }
+            } else {
+                System.out.println("儲值金額為負，來亂的！");
+            }
+        }
+        else {
+            System.out.println("卡號不符");
+        }
+    }
     //扣款
     public void charge(int money){
         if (money > 0){
