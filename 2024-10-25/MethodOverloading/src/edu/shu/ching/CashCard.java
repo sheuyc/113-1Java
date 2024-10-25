@@ -18,7 +18,7 @@ public class CashCard {
         setNumber(number);
         setBalance(balance);
     }
-
+    
     public CashCard(String number, int balance, int bonus) {
         //this.number = number;
         //this.balance = balance;
