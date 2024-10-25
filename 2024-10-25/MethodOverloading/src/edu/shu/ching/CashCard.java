@@ -83,7 +83,7 @@ public class CashCard {
             System.out.println("卡號不符");
         }
     }
-
+    //方法
     private void topUp (int money) {
         if (money > 0) {
             this.balance += money;
@@ -95,7 +95,6 @@ public class CashCard {
             System.out.println("儲值金額為負，來亂的！");
         }
     }
-
     //扣款
     public void charge(int money){
         if (money > 0){
