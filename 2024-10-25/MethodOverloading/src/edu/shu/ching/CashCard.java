@@ -90,7 +90,7 @@ public class CashCard {
         if (money > 0) {
             this.balance += money;
             if (money >= 1000) {
-                this.balance += money / 1000;
+                this.bonus += money / 1000;
             }
         }
         else {
@@ -106,10 +106,10 @@ public class CashCard {
             System.out.println("卡號不符");
         }
     }
-    //
+    //扣款+兌換紅利
     public void charge(String number, int money, int bonus){
         if(this.number.equals(number)){
-            
+            exchange(bonus);
             deduction(money);
         }
         else {
