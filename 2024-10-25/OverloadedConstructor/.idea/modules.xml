@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MethodOverloading.iml" filepath="$PROJECT_DIR$/MethodOverloading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StaticMember.iml" filepath="$PROJECT_DIR$/StaticMember.iml" />
     </modules>
   </component>
 </project>
