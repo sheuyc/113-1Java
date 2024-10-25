@@ -5,7 +5,7 @@ public class CashCard {
     private int balance;
     private int bonus;
     private  final int BOUNSCASH = 10;
-    private int cardOrder;
+    private static int cardOrder;
     //private String number = "A000";
     //方法的身分辨識 = 方法名稱 + 參數個數 + 參數型態
     public CashCard() {
