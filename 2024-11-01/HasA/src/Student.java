@@ -28,6 +28,6 @@ public class Student {
     }
 
     public void printData() {
-        System.out.printf("$s %s", studentID, name);
+        System.out.printf("%s %s", studentID, name);
     }
 }
