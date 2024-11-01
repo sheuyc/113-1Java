@@ -53,6 +53,6 @@ public class GradeBook {
         for (int i = 1; i< numberOfStudents; i++) {
             sum += grades[i];
         }
-        return sum;
+        return sum / numberOfStudents;
     }
 }
