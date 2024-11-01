@@ -28,6 +28,6 @@ public class Student {
     }
 
     public void printData() {
-        System.out.printf("學號:$s, 姓名: %s", studentID, name);
+        System.out.printf("$s %s", studentID, name);
     }
 }

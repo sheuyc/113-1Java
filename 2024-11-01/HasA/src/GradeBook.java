@@ -55,4 +55,18 @@ public class GradeBook {
         }
         return sum / numberOfStudents;
     }
+
+    public void displatGradeReport() {
+        System.out.println("成績報告：");
+        System.out.println("：學號\t 姓名\t 成績");
+        System.out.println("----------------------------");
+        for (int i = 1; i< numberOfStudents; i++) {
+            students[i].printData();
+            System.out.printf(" %.1f\n", grades[i]);
+        }
+        System.out.println("----------------------------");
+        System.out.printf("最高分：%.1f\n",getMaximum());
+        System.out.printf("最低分：%.1f\n",getMinimum());
+        System.out.printf("平均分：%.1f\n",getAverage());
+    }
 }
