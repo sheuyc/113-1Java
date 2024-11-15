@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/2024-11-15.iml" filepath="$PROJECT_DIR$/.idea/2024-11-15.iml" />
       <module fileurl="file://$PROJECT_DIR$/Inheritance02_abstract/Inheritance02_abstract.iml" filepath="$PROJECT_DIR$/Inheritance02_abstract/Inheritance02_abstract.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Inheritance_3_overwriting/Inheritance_3_overwriting.iml" filepath="$PROJECT_DIR$/Inheritance_3_overwriting/Inheritance_3_overwriting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inheritance_3_overwriting/Inheritance_3_overriding.iml" filepath="$PROJECT_DIR$/Inheritance_3_overwriting/Inheritance_3_overriding.iml" />
     </modules>
   </component>
 </project>
