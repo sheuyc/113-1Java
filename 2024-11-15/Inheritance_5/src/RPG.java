@@ -37,6 +37,7 @@ public class RPG {
         else if (role instanceof Magician) {
             System.out.println(role.getName());
             role.fight();
+            ((Magician)role).cure();
         }
         else {
             System.out.println("此角色不具備戰鬥能力");
