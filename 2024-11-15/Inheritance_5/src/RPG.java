@@ -29,11 +29,19 @@ public class RPG {
         drawFight(magician);
     }
 
-    static void drawFight() {
-
+    static void drawFight(Role role) {
+        if (role instanceof SwordsMan) {
+            System.out.println(role.getName());
+            role.fight();
+        }
+        else if (role instanceof Magician) {
+            System.out.println(role.getName());
+            role.fight();
+        }
+        else {
+            System.out.println("此角色不具備戰鬥能力");
+        }
     }
 
-    static void drawName() {
-
-    }
+    //static void drawName() {}
 }
