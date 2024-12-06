@@ -16,7 +16,8 @@ public class Average2 {
             }
             System.out.printf("平均 %.2f%n", sum / count);
         } catch (InputMismatchException ex) {
-            System.out.println("必須輸入整數");
+            //System.out.println("必須輸入整數");
+            System.out.printf("錯誤訊息：" + ex.getMessage());
         }
     }
 }
