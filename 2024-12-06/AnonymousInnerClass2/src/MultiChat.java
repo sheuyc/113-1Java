@@ -4,19 +4,20 @@ public class MultiChat {
         var c2 = new Client("192.168.0.2", "Justin");
 
         var queue = new ClientQueue();
-        queue.addClientListener(new ClientListener() {
-            @Override
-            public void clientAdded(ClientEvent event) {
-                System.out.printf("%s 從 %s 連線%n",
-                        event.getName(), event.getIp());
-            }
 
-            @Override
-            public void clientRemoved(ClientEvent event) {
-                System.out.printf("%s 從 %s 離線%n", 
-                        event.getName(), event.getIp());
-            }
-        });
+//        queue.addClientListener(new ClientListener() {
+//            @Override
+//            public void clientAdded(ClientEvent event) {
+//                System.out.printf("%s 從 %s 連線%n",
+//                        event.getName(), event.getIp());
+//            }
+//
+//            @Override
+//            public void clientRemoved(ClientEvent event) {
+//                System.out.printf("%s 從 %s 離線%n",
+//                        event.getName(), event.getIp());
+//            }
+//        });
         
         queue.enqueue(c1);
         queue.enqueue(c2);
