@@ -18,10 +18,10 @@ public class MultiChat {
             }
         });
         
-        queue.add(c1);
-        queue.add(c2);
+        queue.enqueue(c1);
+        queue.enqueue(c2);
 
-        queue.remove(c1);
-        queue.remove(c2);
+        queue.dequeue(c1);
+        queue.dequeue(c2);
     }
 }

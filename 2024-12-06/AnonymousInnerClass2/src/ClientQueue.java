@@ -29,9 +29,10 @@ public class ClientQueue {
 //        }
     }
     
-    public void remove(Client client) {
+    public void dequeue(Client client) {
         clients.remove(client);
         var event = new ClientEvent(client);
+        listener.clientRemoved(event);
 //        for(var i = 0; i < listeners.size(); i++) {
 //            var listener = (ClientListener) listeners.get(i);
 //            listener.clientRemoved(event);
