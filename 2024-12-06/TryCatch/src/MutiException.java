@@ -10,11 +10,11 @@ public class MutiException {
             FileReader reader = new FileReader(file);
             System.out.println(number[5]);
         }
-        catch (FileNotFoundException e) {
-            System.out.println("處裡未減例外：" + e.getMessage());
-        }
         catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("處裡未減例外：" + e.getMessage());
+            System.out.println("處理未減例外：" + e.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println("處理受減例外：" + e.getMessage());
         }
     }
 }
