@@ -10,6 +10,11 @@ public class ClientQueue {
         }
 
         @Override
+        public void clientPayed(ClientEvent event) {
+            System.out.println("Client payed: " + event.getName());
+        }
+
+        @Override
         public void clientRemoved(ClientEvent event) {
             System.out.println("Client removed: " + event.getName());
         }
@@ -27,6 +32,11 @@ public class ClientQueue {
 //            var listener = (ClientListener) listeners.get(i);
 //            listener.clientAdded(event);
 //        }
+    }
+
+    public void pay(Client client) {
+        var event = new ClientEvent(client);
+        listener.clientPayed(event);
     }
     
     public void dequeue(Client client) {
