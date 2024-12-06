@@ -29,5 +29,9 @@ public class MultiChat {
 
         queue.dequeue(c1);
         queue.dequeue(c2);
+
+        for (Client client : queue.getClients()) {
+            System.out.println("店內顧客：" + client.name);
+        }
     }
 }

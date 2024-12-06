@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ClientQueue {
-    private ArrayList clients = new ArrayList();
+    private ArrayList<Client> clients = new ArrayList<>();
     //private ArrayList listeners = new ArrayList();
     private ClientListener listener  = new ClientListener() {
         @Override
@@ -19,6 +19,10 @@ public class ClientQueue {
             System.out.println("Client removed: " + event.getName());
         }
     };
+
+    public ArrayList<Client> getClients() {
+        return clients;
+    }
             
 //    public void addClientListener(ClientListener listener) {
 //        listeners.add(listener);
