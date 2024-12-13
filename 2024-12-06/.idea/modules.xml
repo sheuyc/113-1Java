@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/2024-12-06.iml" filepath="$PROJECT_DIR$/.idea/2024-12-06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AnonymousInnerClass2/AnonymousInnerClass2.iml" filepath="$PROJECT_DIR$/AnonymousInnerClass2/AnonymousInnerClass2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TryCatch/TryCatch.iml" filepath="$PROJECT_DIR$/TryCatch/TryCatch.iml" />
+    </modules>
+  </component>
+</project>
