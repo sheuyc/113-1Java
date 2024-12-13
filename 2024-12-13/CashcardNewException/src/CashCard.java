@@ -49,7 +49,8 @@ public class CashCard {
             this.balance = balance;
         }
         else {
-            System.out.println("格式不符，保持原值");
+            //System.out.println("格式不符，保持原值");
+            throw new NotMarchException ("格式不符，保持原值");
         }
     }
 
@@ -58,11 +59,12 @@ public class CashCard {
             this.bonus = bonus;
         }
         else {
-            System.out.println("格式不符，保持原值");
+            //System.out.println("格式不符，保持原值");
+            throw new NotMarchException ("格式不符，保持原值");
         }
     }
     //儲值
-    public void store(int money) {
+    public void store(int money) throws InsufficientException {
 //        if (money > 0) {
 //            this.balance += money;
 //            if (money >= 1000) {
@@ -75,16 +77,17 @@ public class CashCard {
         topUp(money);
     }
     //辨識卡號
-    public void store(String number, int money) {
+    public void store(String number, int money)  throws InsufficientException {
         if (this.number.equals(number)) {
             topUp(money);
         }
         else {
-            System.out.println("卡號不符");
+            //System.out.println("卡號不符");
+            throw new NotMarchException ("卡號不符");
         }
     }
     //方法儲值
-    private void topUp (int money) {
+    private void topUp (int money) throws InsufficientException {
         if (money > 0) {
             this.balance += money;
             if (money >= 1000) {
@@ -92,50 +95,56 @@ public class CashCard {
             }
         }
         else {
-            System.out.println("儲值金額為負，來亂的！");
+            //System.out.println("儲值金額為負，來亂的！");
+            throw new InsufficientException ("儲值金額為負，來亂的！");
         }
     }
     //扣款
-    public void charge(String number, int money){
+    public void charge(String number, int money) throws InsufficientException {
         if(this.number.equals(number)){
             deduction(money);
         }
         else {
-            System.out.println("卡號不符");
+            //System.out.println("卡號不符");
+            throw new NotMarchException ("卡號不符");
         }
     }
     //扣款+兌換紅利
-    public void charge(String number, int money, int bonus){
+    public void charge(String number, int money, int bonus) throws InsufficientException {
         if(this.number.equals(number)){
             exchange(bonus);
             deduction(money);
         }
         else {
-            System.out.println("卡號不符");
+            //System.out.println("卡號不符");
+            throw new NotMarchException ("卡號不符");
         }
     }
     //方法扣款
-    private void deduction(int money){
+    private void deduction(int money) throws InsufficientException {
         if (money > 0){
             if (money <= this.balance){
                 this.balance -= money;
             }
             else {
-                System.out.println("餘額不足，可憐啊！");
+                //System.out.println("餘額不足，可憐啊！");
+                throw new InsufficientException ("餘額不足，可憐啊！");
             }
         }
         else {
-            System.out.println("扣儲金額為負，來亂的！");
+            //System.out.println("扣儲金額為負，來亂的！");
+            throw new InsufficientException ("扣儲金額為負，來亂的！");
         }
     }
     //紅利
-    public int exchange(int bonus) {
+    public int exchange (int bonus) throws InsufficientException {
         if (bonus > 0 && this.bonus >= bonus) {
             this.bonus -= bonus;
             setBalance(this.balance + bonus * BOUNSCASH);
         }
         else {
-            System.out.println("點數不足");
+            //System.out.println("點數不足");
+            throw new InsufficientException ("點數不足");
         }
         return this.bonus;
     }
