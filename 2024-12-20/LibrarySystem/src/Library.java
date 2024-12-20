@@ -25,7 +25,7 @@ public class Library {
             System.out.println("無書籍。");
         } else {
             for (Book book : books) {
-                System.out.println("  - " + book.getTitle());
+                System.out.println("  - " + book.getTitle() + "狀態：" + (book.isBorrowed() ? "已借出" : "可借閱"));
             }
         }
     }
