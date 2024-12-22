@@ -14,17 +14,20 @@ public class Account implements AccountOperations, TransactionLogger {
     @Override
     public void deposit(double amount) {
         balance += amount;
-        logTransaction("Deposited: " + amount);
+        logTransaction("存款： " + amount);
     }
 
     @Override
     public void withdraw(double amount) throws InsufficientBalanceException {
-        if (amount > balance) {
-            throw new InsufficientBalanceException("Insufficient balance for withdrawal.");
+        System.out.println("目前餘額：" + balance + "，嘗試提款：" + amount); // 調試輸出
+        if (amount > balance) {  // 如果提款金額超過目前餘額
+            throw new InsufficientBalanceException("餘額不足，無法提款。");
         }
-        balance -= amount;
-        logTransaction("Withdrew: " + amount);
+        balance -= amount;  // 扣除提款金額
+        logTransaction("提款：" + amount);  // 記錄交易
+        System.out.println("提款成功，剩餘餘額：" + balance); // 調試輸出
     }
+
 
     @Override
     public double checkBalance() {
