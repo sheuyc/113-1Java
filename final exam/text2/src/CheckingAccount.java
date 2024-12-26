@@ -1,7 +1,7 @@
 /**
  * CheckingAccount 類別繼承自 Account 類別，表示一種支票帳戶。
  * 支票帳戶具有透支限額，允許帳戶餘額低於零但不超過一定範圍。
- */
+
 public class CheckingAccount extends Account {
     // 定義透支限額，常數值設為 100.0
     private static final double OVERDRAFT_LIMIT = 100.0;
@@ -11,7 +11,7 @@ public class CheckingAccount extends Account {
      *
      * @param accountId      帳戶 ID
      * @param initialBalance 初始餘額
-     */
+
     public CheckingAccount(String accountId, double initialBalance) {
         // 呼叫父類別的建構子，初始化帳戶 ID 和餘額
         super(accountId, initialBalance);
@@ -23,7 +23,7 @@ public class CheckingAccount extends Account {
      *
      * @param amount 提款金額
      * @throws Exception 當提款超過透支限額時拋出
-     */
+
     @Override
     public void withdraw(double amount) throws Exception {
         // 檢查提款後餘額是否超過透支限額
@@ -39,9 +39,10 @@ public class CheckingAccount extends Account {
      * 支票帳戶不會產生利息，因此直接返回 0。
      *
      * @return 利息，支票帳戶固定為 0
-     */
+
     @Override
     public double calculateInterest() {
         return 0; // 支票帳戶無利息
     }
 }
+*/

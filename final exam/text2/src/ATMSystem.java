@@ -95,7 +95,7 @@ public class ATMSystem {
 
     private void userMenu(Scanner scanner) {
         while (true) {
-            System.out.println("請選擇操作：\n1. 查詢帳戶\n2. 開新帳戶\n3. 存款\n4. 提款\n5. 交易記錄\n6. 重置密碼\n7. 刪除帳戶\n8. 登出");
+            System.out.println("請選擇操作：\n1. 查詢帳戶\n2. 開新帳戶\n3. 存款\n4. 提款\n5. 交易記錄\n6. 刪除帳戶\n7. 登出");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -115,12 +115,9 @@ public class ATMSystem {
                     viewTransactionHistory(); // 查看交易記錄
                     break;
                 case 6:
-                    resetPassword(scanner); // 重置密碼
-                    break;
-                case 7:
                     deleteAccount(scanner); // 刪除帳戶
                     break;
-                case 8:
+                case 7:
                     System.out.println("登出成功！");
                     currentUser = null; // 清空當前登入用戶
                     return;
@@ -211,9 +208,8 @@ public class ATMSystem {
         System.out.println("3. 存款");
         System.out.println("4. 提款");
         System.out.println("5. 交易記錄");
-        System.out.println("6. 重置密碼");
-        System.out.println("7. 刪除帳戶");
-        System.out.println("8. 登出");
+        System.out.println("6. 刪除帳戶");
+        System.out.println("7. 登出");
         System.out.println("==================================");
         System.out.print("請選擇操作：");
     }
@@ -259,15 +255,16 @@ public class ATMSystem {
         System.out.print("請輸入初始存款金額：");
         double initialDeposit = scanner.nextDouble();
 
-        Account account;
-        if (choice == 1) {
-            account = new SavingsAccount("SA" + (currentUser.getAccounts().size() + 1), initialDeposit);
-        } else {
-            account = new CheckingAccount("CA" + (currentUser.getAccounts().size() + 1), initialDeposit);
-        }
+        // 根據用戶選擇設定帳戶類型屬性
+        String accountType = (choice == 1) ? "儲蓄帳戶" : "支票帳戶";
+
+        // 建立通用的 Account 物件，並設置類型屬性
+        Account account = new Account("A" + (currentUser.getAccounts().size() + 1), initialDeposit, accountType);
+
         currentUser.addAccount(account);
         System.out.println("帳戶開通成功：" + account);
     }
+
 
     private void deposit(Scanner scanner) {
         // 檢查用戶是否有任何帳戶

@@ -62,10 +62,10 @@ public class DataStore {
         User user2 = new User("002", "Bob", "5678");
 
         // 為用戶添加帳戶
-        user1.addAccount(new SavingsAccount("SA1", 5000.0)); // 儲蓄帳戶
-        user1.addAccount(new CheckingAccount("CA1", 2000.0)); // 支票帳戶
+        user1.addAccount(new Account("A1", 5000.0, "儲蓄帳戶"));
+        user1.addAccount(new Account("A2", 2000.0, "支票帳戶"));
 
-        user2.addAccount(new SavingsAccount("SA2", 10000.0)); // 儲蓄帳戶
+        user2.addAccount(new Account("A3", 10000.0, "儲蓄帳戶"));
 
         // 將用戶添加到系統
         addUser(user1);
