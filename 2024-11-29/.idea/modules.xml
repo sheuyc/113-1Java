@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/2024-11-29.iml" filepath="$PROJECT_DIR$/.idea/2024-11-29.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AnonymousInnerClass/AnonymousInnerClass.iml" filepath="$PROJECT_DIR$/AnonymousInnerClass/AnonymousInnerClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Enum/Enum.iml" filepath="$PROJECT_DIR$/Enum/Enum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InnerClass/InnerClass.iml" filepath="$PROJECT_DIR$/InnerClass/InnerClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interface4/Interface4.iml" filepath="$PROJECT_DIR$/Interface4/Interface4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interface5/Interface5.iml" filepath="$PROJECT_DIR$/Interface5/Interface5.iml" />
+    </modules>
+  </component>
+</project>

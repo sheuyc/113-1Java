@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/2024-12-20.iml" filepath="$PROJECT_DIR$/.idea/2024-12-20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HashSetDemo/HashSetDemo.iml" filepath="$PROJECT_DIR$/HashSetDemo/HashSetDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LibrarySystem/LibrarySystem.iml" filepath="$PROJECT_DIR$/LibrarySystem/LibrarySystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LibrarySystem_Linkedlist/LibrarySystem_Linkedlist.iml" filepath="$PROJECT_DIR$/LibrarySystem_Linkedlist/LibrarySystem_Linkedlist.iml" />
+    </modules>
+  </component>
+</project>
