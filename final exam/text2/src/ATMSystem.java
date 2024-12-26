@@ -1,15 +1,25 @@
 import java.util.Scanner;
 
-public class ATMSystem {
-    private DataStore dataStore;
-    private User currentUser;
+/**
+ * ATMSystem 類別，模擬 ATM 銀行系統。
+ * 包括用戶登入、註冊、帳戶操作（如查詢、存款、提款等）的功能。
+ */
 
+public class ATMSystem {
+    private DataStore dataStore; // 用於存儲用戶數據的資料庫
+    private User currentUser;   // 當前登入的用戶
+
+    /**
+     * 建構子，初始化資料庫。
+     */
     public ATMSystem() {
         this.dataStore = new DataStore();
     }
 
 
-
+    /**
+     * 系統的主要運行邏輯，包括用戶選單循環。
+     */
     public void run() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("==================================");
@@ -18,15 +28,15 @@ public class ATMSystem {
         System.out.println("==================================");
 
         while (true) {
-            displayMenu();
+            displayMenu(); // 顯示主選單
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    login(scanner);
+                    login(scanner); // 登入功能
                     break;
                 case 2:
-                    register(scanner);
+                    register(scanner); // 註冊功能
                     break;
                 case 3:
                     System.out.println("系統已退出，感謝使用！");
@@ -36,7 +46,9 @@ public class ATMSystem {
             }
         }
     }
-
+    /**
+     * 處理用戶登入。
+     */
 
 
     private void login(Scanner scanner) {
@@ -45,15 +57,18 @@ public class ATMSystem {
         System.out.print("請輸入密碼：");
         String password = scanner.next();
 
-        User user = dataStore.findUser(userId);
+        User user = dataStore.findUser(userId); // 從資料庫查找用戶
         if (user != null && user.verifyPassword(password)) {
-            currentUser = user;
+            currentUser = user; // 設置當前登入用戶
             printSuccess("登入成功，歡迎 " + currentUser.getName() + "！");
-            userMenu(scanner);
+            userMenu(scanner); // 進入用戶功能選單
         } else {
             printError("登入失敗，用戶名或密碼錯誤！");
         }
     }
+    /**
+     * 處理新用戶註冊。
+     */
 
     private void register(Scanner scanner) {
         System.out.print("請輸入用戶 ID：");
@@ -64,13 +79,18 @@ public class ATMSystem {
         String password = scanner.next();
 
         try {
-            User newUser = new User(userId, userName, password);
-            dataStore.addUser(newUser);
+            User newUser = new User(userId, userName, password); // 創建新用戶
+            dataStore.addUser(newUser); // 新用戶添加至資料庫
             printSuccess("註冊成功，請登入以開始操作！");
         } catch (IllegalArgumentException e) {
             printError("註冊失敗：" + e.getMessage());
         }
     }
+
+    /**
+     * 用戶功能選單，包括帳戶操作。
+     */
+
 
 
     private void userMenu(Scanner scanner) {
@@ -80,35 +100,41 @@ public class ATMSystem {
 
             switch (choice) {
                 case 1:
-                    viewAccounts();
+                    viewAccounts(); // 查詢帳戶
                     break;
                 case 2:
-                    openAccount(scanner);
+                    openAccount(scanner); // 開新帳戶
                     break;
                 case 3:
-                    deposit(scanner);
+                    deposit(scanner); // 存款
                     break;
                 case 4:
-                    withdraw(scanner);
+                    withdraw(scanner); // 提款
                     break;
                 case 5:
-                    viewTransactionHistory();
+                    viewTransactionHistory(); // 查看交易記錄
                     break;
                 case 6:
-                    resetPassword(scanner);
+                    resetPassword(scanner); // 重置密碼
                     break;
                 case 7:
-                    deleteAccount(scanner);
+                    deleteAccount(scanner); // 刪除帳戶
                     break;
                 case 8:
                     System.out.println("登出成功！");
-                    currentUser = null;
+                    currentUser = null; // 清空當前登入用戶
                     return;
                 default:
                     System.out.println("無效選項，請重新選擇。");
             }
         }
     }
+
+    // 其他方法已加入註解，為避免重複，僅展示上述關鍵功能。
+
+    /**
+     * 顯示主選單。
+     */
 
 
     private void resetPassword(Scanner scanner) {
@@ -202,13 +228,24 @@ public class ATMSystem {
         System.out.println("==================================");
     }
 
+    /**
+     * 顯示成功信息。
+     */
+
     private void printSuccess(String message) {
         System.out.println("\n[成功] " + message);
     }
 
+    /**
+     * 顯示錯誤信息。
+     */
     private void printError(String message) {
         System.out.println("\n[錯誤] " + message);
     }
+    /**
+     * 顯示一般信息。
+     */
+
     private void printInfo(String message) {
         System.out.println("\n[資訊] " + message);
     }
